@@ -44,6 +44,15 @@ Stores the original trajectory files collected from the 2bulu platform using **�
 
 9. **`lstm_minimal.py`**  
    Trains a **simple feedforward neural network** using the data obtained in Step 4 and produces performance metrics to compare the **XGBoost** model with a basic neural network model.
+
+---
+
+## III. Paper Directory
+
+**Source file:** `Karo_English copy.tex`  
+Located in the `paper` directory, containing the manuscript of the research paper.
+
+---
  # 数据与代码
 
 ---
@@ -92,9 +101,6 @@ Stores the original trajectory files collected from the 2bulu platform using **�
 位于 `paper` 目录下，包含论文正文文件。
 ---
 
-## III. Paper Directory
 
-**Source file:** `Karo_English copy.tex`  
-Located in the `paper` directory, containing the manuscript of the research paper.
 
 
