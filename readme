@@ -1,0 +1,20 @@
+
+数据及代码
+
+一、原始数据： kmls 目录，保存了从2bulu上以“冈仁波齐”为关键字抓取到的轨迹原始文件
+
+二、代码及用途：
+
+1. extract_tracks.py : 检查kmls目录中的每个轨迹文件，过滤具有完整gps坐标轨迹以及总路程在30KM到60KM之间的轨迹文件，生成对应的 tracks 目录
+2. find_continuous_tracks.py : 检查tracks目录中的所有数据文件，找出所有起点在塔钦中心2KM范围内，且经过岗加/芝热寺中心1KM范围内，而且在这两个点之间的轨迹没有超过2小时的逗留时间，总时长在5小时到3天，发生在5月到10月之间，出发时间在早上6点以后，下午2点之前的轨迹，将找到的轨迹记录在continuous_tracks.csv文件中
+3. filter_and_trim_tracks.py : 根据continuous_tracks.csv中的记录，将tracks目录中对应的文件逐个处理，去除岗加/芝热寺之后的数据点，将所有加工后的数据文件存储在filtered_tracks目录中
+4. flexible_time_predictor.py: 使用filtered_tracks中的数据进行xboost数据准备及模型训练
+5. visualize_model_results.py: 以图形化形式展示步骤4所训练得到的模型及结果
+6. visualize_track_predictions.py: 随机选取一个轨迹，为轨迹上的每个点生成到各个目的地的预测，计算预测误差并创建可视化图表
+7. shap_analysis.py：对5所得到的模型进行shap分析，生成相关分析图表
+8. display_track_map.py： 创建转山路线及分段点示意图
+9. lstm_minimal.py：使用一个简单的前向神经网络对步骤4所得到的数据进行训练并得到相关性能数据，用于对比分析xgboost模型和简单的神经网络模型之间的性能差异
+
+三、文章目录 paper
+
+源文件：Karo_English copy.tex
